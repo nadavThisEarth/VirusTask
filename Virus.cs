@@ -34,7 +34,14 @@ namespace VirusTask
         {
             return multiplied;
         }
-
+        /// <summary>
+        /// Computes the chance of single virus cell  multiplication <br/> 
+        /// according to a formula that involves given statistic probability <br/> 
+        /// AND virus capacity in human tissue
+        /// </summary>
+        /// <param name="capacity"></param>
+        /// <param name="r"></param>
+        /// <returns>whether virus cell multiplied or not</returns>
         public bool MultiplyChance(double capacity, double r)
         {
             if (r > ((1 - capacity) * this.multiProb))
