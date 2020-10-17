@@ -15,7 +15,7 @@ namespace VirusTask
 
         public double capacity { get; set; }
 
-        public Virus(double detachProb, double multiProb,double capacity)
+        public Virus(double detachProb, double multiProb, double capacity)
         {
             this.capacity = capacity;
             this.detachProb = detachProb;
@@ -23,7 +23,7 @@ namespace VirusTask
             Random rand = new Random();
             double r = rand.NextDouble();
             this.survived = (r > detachProb);
-            this.multiplied = (MultiplyChance(capacity,r) && this.survived);
+            this.multiplied = (MultiplyChance(capacity, r) && this.survived);
         }
 
         public bool isSurvived()
@@ -46,11 +46,5 @@ namespace VirusTask
                 return true;
             }
         }
-
-
-
-
-
-
     }
 }

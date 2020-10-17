@@ -61,9 +61,6 @@ namespace VirusTask
             this.capacity = virusList.Count / (double)numOfCells;//updating capacity in Patient CLASS
 
             return $"After experiment , there are {virusList.Count} virus cells\nSurvived AND MUTIPLIED: {multi}\nSurvived WITHOUT MULTIPLYING: {surv}\nDied: {dead}\n";
-
-
         }
-
     }
 }
