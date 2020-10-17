@@ -13,7 +13,7 @@ namespace VirusTask
             List<Virus> virusList = new List<Virus>();
             for (int i = 0; i < 100; i++)
             {
-                virusList.Add(new Virus(0.03, 0.1));
+                virusList.Add(new Virus(0.03, 0.1, capacity));
             }
             Patient p = new Patient(virusList, 1000);
 
@@ -26,20 +26,7 @@ namespace VirusTask
 
             Console.WriteLine(p.UpdateNoMedicine(capacity));
 
-            capacity = p.virusList.Count / (double)p.numOfCells; // updating capacity according to last run results
-            /*  
-             *  
-             *  printing SECOND required function
-             *  
-             */
-            if (p.virusList[0].MultiplyChance(capacity))
-            {
-                Console.WriteLine("Virus has multiplied");
-            }
-            else
-            {
-                Console.WriteLine("virus hasn't multiplied");
-            }
+
 
         }
 

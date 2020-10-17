@@ -13,45 +13,30 @@ namespace VirusTask
 
         private bool multiplied;
 
-        public Virus(double detachProb, double multiProb)
+        public double capacity { get; set; }
+
+        public Virus(double detachProb, double multiProb,double capacity)
         {
+            this.capacity = capacity;
             this.detachProb = detachProb;
             this.multiProb = multiProb;
             Random rand = new Random();
             double r = rand.NextDouble();
-            if (r > detachProb)
-            {
-                this.survived = true;
-            }
-            else
-            {
-                this.survived = false;
-            }
-            r = rand.NextDouble();
-            if (r < multiProb && this.survived == true)
-            {
-                this.multiplied = true;
-            }
-            else
-            {
-                this.multiplied = false;
-            }
+            this.survived = (r > detachProb);
+            this.multiplied = (MultiplyChance(capacity,r) && this.survived);
         }
 
-        public bool GetSurvived()
+        public bool isSurvived()
         {
             return survived;
         }
-        public bool GetMultiplied()
+        public bool isMultiplied()
         {
             return multiplied;
         }
 
-        public bool MultiplyChance(double capacity)
+        public bool MultiplyChance(double capacity, double r)
         {
-            Random rand = new Random();
-            double r = rand.NextDouble();
-
             if (r > ((1 - capacity) * this.multiProb))
             {
                 return false;
