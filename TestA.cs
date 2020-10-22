@@ -6,7 +6,7 @@ namespace VirusTask
 {
     class TestA
     {
-        public void GeneratorA()
+        public void GeneratorA() // This simulation runs only once (in main)
         {
             double capacity = 100.0 / 1000;    //  arbitrary values
 
@@ -25,9 +25,6 @@ namespace VirusTask
              */
 
             Console.WriteLine(p.UpdateNoMedicine(capacity));
-
-
-
         }
 
 

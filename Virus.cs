@@ -6,15 +6,14 @@ namespace VirusTask
 {
     class Virus
     {
+        //members
         public double detachProb { get; set; }
         public double multiProb { get; set; }
-
-        private bool survived;
-
-        private bool multiplied;
-
+        protected bool survived;
+        protected bool multiplied;
         public double capacity { get; set; }
 
+        //ctor
         public Virus(double detachProb, double multiProb, double capacity)
         {
             this.capacity = capacity;
